@@ -4,7 +4,17 @@
 <title>Connect</title>
 </head>
 <style>
-background-color: light blue;
+h1 {
+   color: black;
+ 
+ }
+ body{
+   color: black;
+   background-color: light blue;
+ }
+  
+</style>
+<h1>Connect</h1>
 
 <body>
 </body>

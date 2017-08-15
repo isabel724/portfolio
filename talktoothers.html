@@ -20,7 +20,7 @@ function chat(){
 	document.getElementById('chat_message').style.display="block";
 	setTimeout("document.getElementById('chat_message').style.display='none'",1500);
 	setTimeout("document.getElementById('response').style.display='block'",14980);
-	setTimeout("document.getElementById('response').innerHTML='<p>Hello! How are you today?</p>'",15000);
+	setTimeout("document.getElementById('response').innerHTML='<p>Hello! How are you?</p>'",15000);
 }
 </script>
 <style type="text/css">
@@ -39,8 +39,8 @@ function chat(){
 <div id="login">
   <form>
     <div>
-      <label>Name:</label><input type="text" name="username" id="metanoia" value="metanoia" />
-      <label>Password:</label><input type="text" name="password" id="eddy" value="eddy" />
+      <label>Name:</label><input type="text" name="name" id="name" value="admin" />
+      <label>Password:</label><input type="password" name="password" id="password" value="password" />
       <input type="submit" name="submit" id="submit" value="Log In" onclick="login();return false;" />
     </div>
   </form>
@@ -61,7 +61,6 @@ function chat(){
 <div id="response"></div>
 </body>
 </html>
-
 	
 
 

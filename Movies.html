@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<meta charset=utf-8 />
+<title> Interests </title>
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+ <style>
+   article, aside, figure, footer, header, hgroup, 
+  menu, nav, section { display: block; }
+   body {
+ font-family: "Lucida Console", monospace;
+ background-color: pink;
+}
+/* Style the buttons inside the tab */
+div.tab button{
+ margin:auto;
+ background-color: #8123db;
+ border: none;
+ outline: none;
+ cursor: pointer;
+ padding: 14px 16px;
+ transition: 0.3s;
+ font-size: 17px;
+ color:white;
+ border-radius: 250px;
+}
+/* Change background color of buttons on hover */
+div.tab button:hover {
+ background-color: #9d76e2;
+ 
+}
+/* Create an active/current tablink class */
+div.tab button.active {
+ background-color: #9d76e2;
+}
+/* Style the tab content */
+.tabcontent {
+ display: none;
+ padding: 10px 12px;
+ text-align:center;
+ margin:auto;
+ 
+ 
+ 
+}
+#photo{
+ height:350px;
+ margin-left:20px;
+ float:left;
+ width:250px;}
+ 
+#photo2{
+width:250px;}
+margin-left:25px;
+  
+#quote{
+ height:300px;
+ width:425px;}
+ 
+#quote3{
+ height:250px;
+ width:500px;} </style>
+
+</head>
+<body>
+  
+<h1><strong> Films/ TV SHOWS </strong></h1>
+<div class="tab">
+ <button class="tablinks" onclick="openCategory(event, 'Posters/Trailers')" id="defaultOpen">Posters/Trailers</button>
+ 
+ <button class="tablinks" onclick="openCategory(event, 'Movie/TV Show Quotes')">Movie/TV Show Quotes</button>
+  
+ 
+</div>
+
+<div id="Posters/Trailers" class="tabcontent">
+ <h3>Posters/Trailers</h3>
+ 
+  <p style="float: left; width: 250px; height: 500px; margin-left: 5px; margin-bottom: 5px; text-align: center: font-size: 8pt;"><img id= "photo" src="http://img.auctiva.com/imgdata/1/1/7/9/1/0/1/webimg/561775822_o.jpg" style="width: 100%;"><em><strong>Five high school students from different walks of life endure a Saturday detention under a power-hungry principal (Paul Gleason). The disparate group includes rebel John (Judd Nelson), princess Claire (Molly Ringwald), outcast Allison (Ally Sheedy), brainy Brian (Anthony Michael Hall) and Andrew (Emilio Estevez), the jock. Each has a chance to tell his or her story, making the others see them a little differently -- and when the day ends, they question whether school will ever be the same.</em></strong></p>
+
+
+
+  <p style="float: right; width: 250px; margin-left: 5px; margin-bottom: 5px; text-align: center: font-size: 5pt;"><img id-"photo2"
+                                                                                                                src="https://milesherndon.com/uploads/blogImages/psycho-1960-movie-poster.jpg" style="width: 100%;">
+    <em><strong>Phoenix secretary Marion Crane (Janet Leigh), on the lam after stealing $40,000 from her employer in order to run away with her boyfriend, Sam Loomis (John Gavin), is overcome by exhaustion during a heavy rainstorm. Traveling on the back roads to avoid the police, she stops for the night at the ramshackle Bates Motel and meets the polite but highly strung proprietor Norman Bates (Anthony Perkins), a young man with an interest in taxidermy and a difficult relationship with his mother.</em></strong></p>
+ 
+</div>
+
+<div id="Movie/TV Show Quotes" class="tabcontent">
+ <header>
+ <h3>Movie/TV Show Quotes</h3>
+</header>
+ <img id = "quote"
+ src="https://media.giphy.com/media/3o7aTIGlhSo1bL8QUg/giphy.gif"/>
+ <p><em><strong> Clueless</strong>, 1995 </em></p>
+ <img id = "quote2"
+ src="https://media.giphy.com/media/HVz5eFCqRm4U/giphy.gif"/>
+ <p><em><strong> Aladdin</strong>, 1992 </em></p>
+ <img id = "quote3"
+ src="https://media.giphy.com/media/qwyK9UZjJ1QLC/giphy.gif"/>
+ <p><em><strong> Supernatural</strong>,2005-</em></p>
+
+
+
+<script>
+function openCategory(evt, categoryName) {
+ var i, tabcontent, tablinks;
+ tabcontent = document.getElementsByClassName("tabcontent");
+ for (i = 0; i < tabcontent.length; i++) {
+ tabcontent[i].style.display = "none";
+ }
+ tablinks = document.getElementsByClassName("tablinks");
+ for (i = 0; i < tablinks.length; i++) {
+ tablinks[i].className = tablinks[i].className.replace(" active", "");
+ }
+ document.getElementById(categoryName).style.display = "block";
+ evt.currentTarget.className += " active";
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+  
+
+
+</script>
+  
+
+  
+ 
+</body>
+</html> 

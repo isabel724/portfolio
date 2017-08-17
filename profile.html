@@ -6,7 +6,7 @@
   </head>
 <article role="profile">
   <aside class="avatar">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/131611/avatar.jpg" alt="Avatar Korra" />
+    <img src="https://p11-mailws.icloud.com/wm/messagepart/NewLogo.jpg?guid=messagepart%3AINBOX%2F10452-2&type=image%2Fjpeg&uniq=isabel.l.serna&name=NewLogo.jpg&size=446528&dsid=1956627231&clientId=02554ACB-6549-41AD-9596-5A1B185BAEF7" alt="Metanoia" />
   </aside>
   
   <h2>Metanoia Developers</h2>
@@ -14,9 +14,7 @@
     <li>
       <a class="twitter" href= "//twitter.com/Metanoia2k17"><i class="fa fa-twitter"></i></a>
     </li>
-    <li>
-      <a class="codepen" href="//codepen.io/digsite_"><i class="fa fa-codepen"></i></a>
-    </li>
+    
     <li>
       <a class="github" href="https://github.com/isabel724"><i class="fa fa-github"></i></a>
     </li>
@@ -224,10 +222,6 @@ article[role="profile"] h2{
         content: "Twitter";
       }
       
-      &.codepen:after {
-        content: "Codepen";
-      }
-      
       &.github:after {
         content: "GitHub";
       }
@@ -248,43 +242,6 @@ article[role="profile"] h2{
   background-color: $gray;
   z-index: 25;
   
-  &:before {
-    content: "I'm an Avatar image!";
-    text: {
-      transform: uppercase;
-      align: center;
-    }
-    font: {
-      weight: bold;
-      size: 1em;
-    }
-    position: absolute;
-    top: 1em;
-    left: 0;
-    width: 100%;
-  }
-  
-  &:after {
-    content: "You gotta deal with it!";
-    text: {
-      transform: uppercase;
-      align: center;
-    }
-    font: {
-      weight: bold;
-      size: 2em;
-    }
-    position: absolute;
-    bottom: 0;
-    left: 0%;
-    width: 100%;
-    @include opacity(0);
-    @include animation(fontbulge 0.5s ease-in infinite, coloriffic 0.5s ease-in infinite);    
-    @include transition(all 0.5s);
-  }
-  
-  &:hover:after{
-    @include opacity(1);
-  }
+
 }
   </style>

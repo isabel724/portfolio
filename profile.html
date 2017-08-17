@@ -1,74 +1,294 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
+  
+<h1>Profile Information</h1>
+  </head>
+<article role="profile">
+  <aside class="avatar">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/131611/avatar.jpg" alt="Avatar Korra" />
+  </aside>
+  
+  <h2>Jeremy Paris</h2>
+  <ul class="vitals">
+    <li>
+      <a class="twitter" href="//twitter.com/digsite_"><i class="fa fa-twitter"></i></a>
+    </li>
+    <li>
+      <a class="codepen" href="//codepen.io/digsite_"><i class="fa fa-codepen"></i></a>
+    </li>
+    <li>
+      <a class="github" href="//github.com/digsite"><i class="fa fa-github"></i></a>
+    </li>
+    <li>
+      <a class="location" href="//maps.google.com/maps?es_sm=119&q=manchester+nh&um=1&ie=UTF-8&hq=&hnear=0x89e24ed668666ca3:0x6b0432461f357179,Manchester,+NH&gl=us&sa=X&ei=zqJ7U5meDsyqyAT98oLQDg&ved=0CLUBELYDMA8"><i class="fa fa-globe"></i></a>
+    </li>
+  </ul>
+  
+  <p>
+    Front End Web Developer for <a href="http://wedu.com/">wedü</a>. Kenpo Karate Black Belt & Gracie Jiu Jitsu Blue Belt. Tweeting nerdy stuff. Opinions are my own. 
+  </p>
+</article>
+  
+  
+  <style>
+    @import "compass/css3";
+
+/*
+==================
+IMPORTS
+==================  
+*/
+@import url(//fonts.googleapis.com/css?family=Rosario:400,700);
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
+
+/*
+==================
+VARIABLES
+==================  
+*/
+$black: #000;
+$red: #c00;
+$purple: #551a8b;
+$off: #0ff;
+$darkoff: darken($off, 25);
+$foofoo: #f00f00;
+$foffer: #f0ff32; 
+$gray: #dcdcdc;
+
+/*
+==================
+EXTENDS
+==================  
+*/
+%headers {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: .5em;
 }
 
-.container {
-  padding: 0 16px;
+/*
+==================
+ANIMATIONS
+==================  
+*/
+@-webkit-keyframes coloriffic {
+  0%,100% { color: $purple; }
+  20% { color: $red; }
+  40% { color: $off; }
+  60% { color: $foofoo; }
+  80% { color: $foffer; }
+}
+@-moz-keyframes coloriffic {
+  0%,100% { color: $purple; }
+  20% { color: $red; }
+  40% { color: $off; }
+  60% { color: $foofoo; }
+  80% { color: $foffer; }
+}
+@-o-keyframes coloriffic {
+  0%,100% { color: $purple; }
+  20% { color: $red; }
+  40% { color: $off; }
+  60% { color: $foofoo; }
+  80% { color: $foffer; }
+}
+@keyframes coloriffic {
+  0%,100% { color: $purple; }
+  20% { color: $red; }
+  40% { color: $off; }
+  60% { color: $foofoo; }
+  80% { color: $foffer; }
 }
 
-.container::after {
-  content: "";
-  clear: both;
-  display: table;
+
+@-webkit-keyframes fontbulge {
+  0%,100% { font-size: 2em; }
+  50% { font-size: 2.25em; }
+}
+@-moz-keyframes fontbulge {
+  0%,100% { font-size: 2em; }
+  50% { font-size: 2.25em; }
+}
+@-o-keyframes fontbulge {
+  0%,100% { font-size: 2em; }
+  50% { font-size: 2.25em; }
+}
+@keyframes fontbulge {
+  0%,100% { font-size: 2em; }
+  50% { font-size: 2.25em; }
 }
 
-.title {
-  color: grey;
-  font-size: 18px;
+@-webkit-keyframes spinning {
+  from {  @include rotateY(0deg);  }
+  to {  @include rotateY(-360deg);  }
+}
+@-moz-keyframes spinning {
+  from {  @include rotateY(0deg);  }
+  to {  @include rotateY(-360deg);  }
+}
+@-o-keyframes spinning {
+  from {  @include rotateY(0deg);  }
+  to {  @include rotateY(-360deg);  }
+}
+@keyframes spinning {
+  from {  @include rotateY(0deg);  }
+  to {  @include rotateY(-360deg);  }
 }
 
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
+/*
+==================
+DEFAULTS
+==================  
+*/
+body {
+  padding: 2em;
+  font: 16px Rosario, sans-serif;
+}
+
+img {
+  display: block;
+}
+
+h1 {
+  @extend %headers;
+  font-size: 3em;
+  text-align: right;
+  letter-spacing: 0.25em;
+}
+
+h2 {
+  @extend %headers;
+  font-size: 2em;  
 }
 
 a {
+  display: inline-block;
+  color: $darkoff;
   text-decoration: none;
-  font-size: 22px;
-  color: black;
 }
 
-button:hover, a:hover {
-  opacity: 0.7;
+p {
+  margin: 0.5em 0;
+  a {
+    @include transition(all .25s);
+    &:hover {
+      padding: 0 1em;
+      color: #fff;
+      background-color: $darkoff;
+    }
+  }
 }
-</style>
-</head>
-<body>
 
-<h2 style="text-align:center">User Profile Card</h2>
+/*
+==================
+LAYOUT
+==================  
+*/
+article[role="profile"] h2{
+  @include transition(all .5s);
+  &:hover {
+    letter-spacing: .25em;
+    color: $purple;  
+  }  
+}
 
-<div class="card">
-  <img src="/w3images/team2.jpg" alt="John" style="width:100%">
-  <div class="container">
-    <h1>John Doe</h1>
-    <p class="title">CEO & Founder, Example</p>
-    <p>Harvard University</p>
-    <div style="margin: 24px 0;">
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a>  
-      <a href="#"><i class="fa fa-linkedin"></i></a>  
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-   </div>
-   <p><button>Contact</button></p>
-  </div>
-</div>
+.vitals {
+  li {
+    font-size: 1.75em;
+    font-family: Helvetica, Verdana, sans-serif;
+    overflow: hidden;
+    a {
+      display: block;
+      position: relative;
+      
+      &:after {
+        font-size: 0.5em;
+        position: absolute;
+        left: -10em;
+        background: transparent;
+        padding: 0.25em 1.5em;
+        margin-top: 0.25em;
+        background: $darkoff;
+        color: #fff;
+        @include border-radius(10px);
+        @include opacity(0);
+        @include transition(all .5s);
+      }
+      
+      &:hover:after {
+        left: 3em;
+        @include opacity(1);
+        @include animation(spinning 0.5s ease-in-out);
+      }
+      
+      &.twitter:after{
+        content: "Twitter";
+      }
+      
+      &.codepen:after {
+        content: "Codepen";
+      }
+      
+      &.github:after {
+        content: "GitHub";
+      }
+      
+      &.location:after {
+        content: "Manchester, NH";
+      }
+    }
+  }
+}
 
-</body>
-</html>
+.avatar {
+  float: right;
+  margin-left: 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  border: 1em solid $gray;
+  position: relative;
+  overflow: hidden;
+  background-color: $gray;
+  z-index: 25;
+  
+  &:before {
+    content: "I'm an Avatar image!";
+    text: {
+      transform: uppercase;
+      align: center;
+    }
+    font: {
+      weight: bold;
+      size: 1em;
+    }
+    position: absolute;
+    top: 1em;
+    left: 0;
+    width: 100%;
+  }
+  
+  &:after {
+    content: "You gotta deal with it!";
+    text: {
+      transform: uppercase;
+      align: center;
+    }
+    font: {
+      weight: bold;
+      size: 2em;
+    }
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    width: 100%;
+    @include opacity(0);
+    @include animation(fontbulge 0.5s ease-in infinite, coloriffic 0.5s ease-in infinite);    
+    @include transition(all 0.5s);
+  }
+  
+  &:hover:after{
+    @include opacity(1);
+  }
+}
+  </style>

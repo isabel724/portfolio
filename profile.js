@@ -1,3 +1,4 @@
+<body>
 Accounts.onCreateUser(function(options, user) {
     if (! options.profile) options.profile = {};
     options.profile.artist = true;
